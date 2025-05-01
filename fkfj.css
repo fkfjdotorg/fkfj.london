@@ -1,0 +1,505 @@
+@font-face {
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: normal;
+  src: url(fonts/OverpassMono-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Courier Prime';
+  font-style: normal;
+  font-weight: normal;
+  src: url(fonts/CourierPrime-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Courier Prime';
+  font-style: normal;
+  font-weight: bold;
+  src: url(fonts/CourierPrime-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Courier Prime';
+  font-style: italic;
+  font-weight: normal;
+  src: url(fonts/CourierPrime-Italic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Courier Prime';
+  font-style: italic;
+  font-weight: bold;
+  src: url(fonts/CourierPrime-BoldItalic.ttf) format('truetype');
+}
+
+:root {
+  --beige: #E6E4D4;
+  --beige-text: #F5F5F5;
+  --green-bg: #469E5A;
+  --green-text: #2D7C3F;
+  --baby-blue: #BFE2E6;
+  --gridline-blue: #86C7CE;
+  --yellow: #EFF30B;
+
+  --large-max-width: 50vw;
+  --medium-max-width: 60vw;
+  --small-max-width: 90vw;
+  --tiny-max-width: 95vw;
+  
+  --default-max-width: var(--medium-max-width);
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+}
+
+body {
+  font-family: 'Courier Prime', Courier New, monospace;
+  color: var(--green-text);
+  overflow-x: hidden;
+}
+
+img, picture {
+  max-width: 100%;
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+p, ol {
+  font-size: 20px;
+}
+
+header h1, header h2, header h3 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+header {
+  max-width: var(--default-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.hidden {
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.hand-drawn-title {
+  max-width: 340px;
+}
+
+
+.logo {
+  flex: 0 0 400px;
+  position: relative;
+}
+
+.logo-img {
+  max-width: 100%;
+}
+
+.logo-txt {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.sticker-wrapper {
+  position: absolute;
+  left: -50px;
+  top: -10px;
+  transform: rotate(8deg);
+}
+.sticker2-wrapper {
+  position: absolute;
+  right: 30px;
+  top: -20px;
+  transform: rotate(-5deg);
+  z-index: 6;
+}
+.price-sticker {
+  display: inline-block;
+  width: 100px;
+  height: 52px;
+  position: relative;
+  background: var(--yellow);
+  mask: url(images/price-sticker.svg#price-sticker);
+  mask-size: cover;
+}
+.price-sticker span {
+  color: black;
+  font-family: 'Overpass', monospace;
+  font-size: 20px;
+  position: absolute;
+  top: 13px;
+  left: 15px;
+}
+
+.hand-drawn-about {
+  max-width: 80%;
+}
+
+.date {
+  font-style: italic;
+  margin: 0;
+}
+.what-it-is {
+  font-style: italic;
+  font-weight: normal;
+  margin: 0;
+}
+
+.pages {
+  max-width: var(--default-max-width);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 1100px;
+}
+.no-js .pages {
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  padding-left: 20px;
+  min-height: 900px;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  gap: 0;
+  flex-direction: row;
+  align-items: stretch;
+  transition: all 0.25s ease-out;
+}
+.no-js .page {
+  position: unset !important;
+}
+
+.page-margin {
+  flex: 0 0 90px;
+  background: var(--baby-blue);
+  mask: url(images/holespunched.svg);
+  mask-size: cover;
+}
+
+.page.blue .page-margin {
+  mask: unset;
+}
+.page-inner {
+  padding: 5px 20px 20px 20px;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.page.bottom {
+  transform: rotate(1.6deg);
+  z-index: 0;
+  left: -35px;
+  cursor: pointer;
+}
+.page.bottom.mid-transition {
+  transform: rotate(4.2deg);
+  left: -130px;
+}
+.no-js .page.bottom {
+ order: 3;
+}
+
+.page.middle {
+  transform: rotate(0deg);
+  top: 50px;
+  left: 20px;
+  z-index: 1;
+  cursor: pointer;
+}
+.page.middle.mid-transition {
+  transform: rotate(-5deg);
+  left: 80px;
+}
+.no-js .page.middle {
+ order: 2;
+}
+
+.page.top {
+  transform: rotate(-1.7deg);
+  top: 100px;
+  left: -40px;
+  z-index: 2;
+}
+.page.top.mid-transition {
+  transform: rotate(-3deg);
+  left: -80px;
+}
+.no-js .page.top {
+ order: 1;
+}
+
+.page.beige .page-inner, .page.beige .page-margin {
+  background: var(--beige);
+}
+
+.page.green .page-inner, .page.green .page-margin {
+  background: var(--green-bg);
+  color: var(--beige-text);
+}
+.page.blue .page-inner, .page.blue .page-margin {
+  background: var(--baby-blue);
+}
+
+.page.beige .content {
+  background-image: url(images/lines.svg);
+  background-size: cover;
+}
+
+.page.green .content {
+  background-image: url(images/dotgrid.svg);
+  background-size: cover;
+}
+
+.page.blue .content {
+  /* overflow-y: auto; */
+  position: relative;
+
+  background:
+    linear-gradient(#bfe2e6 33%, rgba(191,226,230, 0)),
+    linear-gradient(rgba(191,226,230, 0), #bfe2e6 66%) 0 100%,
+    radial-gradient(farthest-side at 50% 0, rgba(45,124,63, 0.5), rgba(0,0,0,0)),
+    radial-gradient(farthest-side at 50% 100%, rgba(45,124,63, 0.5), rgba(0,0,0,0)) 0 100%;
+  background-color: #bfe2e6;
+  background-repeat: no-repeat;
+  background-attachment: local, local, scroll, scroll;
+  background-size: 100% 51px, 100% 51px, 100% 17px, 100% 17px;
+}
+.page.blue .grid {
+  background-image: url(images/grid.svg);
+  background-repeat: repeat;
+  position: fixed;
+  left: 130px;
+  right: 20px;
+  top: 76px;
+  bottom: 20px;
+  pointer-events: none;
+  mix-blend-mode: darken;
+}
+
+.content {
+  padding: 20px;
+  flex-grow: 2;
+}
+.content {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.content::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+.events {
+  list-style-type: none;
+  margin-top: 0;
+  padding: 0;
+  border-top: 1px solid var(--green-bg);
+}
+
+.event {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--green-bg);
+  cursor: pointer;
+}
+.no-js .event {
+  cursor: unset !important;
+}
+
+.event.expanded p {
+  display: block;
+}
+
+.event p {
+  display: none;
+  max-width: 100%;
+  margin-top: 1em;
+}
+
+.event p:last-of-type {
+  margin-bottom: 0;
+}
+
+.event .date-time, .event .location {
+}
+
+.event .title {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 24px;
+  display: block;
+  text-decoration: underline;
+}
+
+footer {
+  max-width: var(--default-max-width);
+  margin: 10px auto 20px auto;
+  min-height: 80px;
+}
+
+@media (width > 1800px) {
+  :root {
+    --default-max-width: var(--large-max-width)
+  }
+}
+
+@media (width > 1200px) and (width <= 1800px) {
+  :root {
+    --default-max-width: var(--medium-max-width)
+  }
+
+  .logo {
+    flex: 0 0 30%;
+  }
+}
+
+@media (width > 500px) and (width <= 1200px) {
+  :root {
+    --default-max-width: var(--small-max-width)
+  }
+
+  .logo {
+    flex: 0 0 30%;
+  }
+
+  .sticker-wrapper {
+    left: 0;
+    top: -10px;
+  }
+}
+
+@media (width <= 500px) {
+  :root {
+    --default-max-width: var(--tiny-max-width);
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 15px;
+    box-sizing: border-box;
+  }
+
+  p, ol {
+    font-size: 18px;
+  }
+
+  .hand-drawn-about {
+    max-width: 100%;
+  }
+
+  .hand-drawn-title {
+    max-width: 200px;
+  }
+
+  .date, .what-it-is {
+    font-size: 18px;
+  }
+
+  .logo {
+    flex: 0 0 50%;
+    position: relative;
+  }
+  
+  .logo-img {
+    padding-top: 20px;
+  }
+
+  .price-sticker {
+    width: 75px;
+    height: 39px;
+  }
+
+  .price-sticker span {
+    font-size: 16px;
+  }
+
+  .sticker-wrapper {
+    left: 0;
+    top: -25px;
+  }
+
+  .pages {
+    min-width: 105vw;
+    min-height: 100vh;
+  }
+
+  .page {
+    min-height: 90vh;
+  }
+
+  .page.blue .grid {
+    left: 90px;
+    right: 20px;
+    top: 60px;
+    bottom: 20px;
+  }
+
+  .page-margin {
+    flex: 0 0 50px;
+    mask: url(images/holespunched2.svg);
+    mask-size: cover;
+    mask-position: center;
+  }
+
+  .page-inner {
+    padding-top: 10px;
+  }
+
+  .page-inner h1 {
+    font-size: 22px;
+  }
+
+  .event .title {
+    font-size: 18px;
+  }
+
+  footer {
+    margin-top: 40px;
+    min-height: unset;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  * {
+    animation: none !important;
+    transition-duration: 0s !important;
+  }
+}
