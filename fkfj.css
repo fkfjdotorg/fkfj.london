@@ -36,8 +36,8 @@
 :root {
   --beige: #E6E4D4;
   --beige-text: #F5F5F5;
-  --green-bg: #469E5A;
-  --green-text: #2D7C3F;
+  --green-bg: #207B35;
+  --green-text: #276A36;
   --baby-blue: #BFE2E6;
   --gridline-blue: #86C7CE;
   --yellow: #EFF30B;
@@ -79,7 +79,8 @@ p {
 h1 {
   font-style: italic;
   font-weight: bold;
-  margin-top: 0;
+  margin-top: 10;
+  font-size: 1.75em;
 }
 
 p, ol {
@@ -101,12 +102,6 @@ header {
   display: flex;
   gap: 40px;
   align-items: center;
-}
-
-.hidden {
-  height: 0;
-  width: 0;
-  opacity: 0;
 }
 
 .hand-drawn-title {
@@ -187,7 +182,7 @@ header {
 }
 
 .page {
-  padding-left: 20px;
+  margin-left: 20px;
   min-height: 900px;
   width: 100%;
   position: absolute;

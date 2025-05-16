@@ -48,6 +48,12 @@ let setUpPageAnimations = () => {
           
       });
     });
+  document.addEventListener("keydown", function(e) {
+    if (e.code == "Space" || e.code == "Enter") {
+      document.activeElement.click();
+    }
+  });
+ 
 };
 
 let setUpEventProgressiveDisclosure = () => {
@@ -65,5 +71,4 @@ document.body.classList.remove('no-js');
 
 document.addEventListener("DOMContentLoaded", () => {
   setUpPageAnimations();
-  setUpEventProgressiveDisclosure();
 });
